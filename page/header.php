@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require('roles.php');
+require('./roles.php');
 ?>
 
 
@@ -32,12 +32,12 @@ require('roles.php');
          <div class=" my-auto">
             <ul class="nav  justify-content-end">
                <li class="nav-item">
-                  <a href="panier/panier.php" class="nav-link text-white">
+                  <a href="../panier/panier.php" class="nav-link text-white">
                      <i class="bi bi-cart4"></i> Panier
                   </a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link text-white" href="panier/commande.php"><i class="bi bi-basket2-fill"></i> Commandes</a>
+                  <a class="nav-link text-white" href="../panier/panier.php"><i class="bi bi-basket2-fill"></i> Commandes</a>
                </li>
                <!--<li class="nav-item">
                   <a class="nav-link text-white" href="#">
@@ -46,25 +46,25 @@ require('roles.php');
                </li>
                <?php if (isBoutiquier()) : ?>
                <li class="nav-item">
-                     <a class="nav-link text-white" href="produits/listproduit.php"><i class="bi bi-cart4"></i> Produits</a>
+                     <a class="nav-link text-white" href="../produits/listproduit.php"><i class="bi bi-cart4"></i> Produits</a>
                </li> 
                <li class="nav-item">
-                     <a class="nav-link text-white" href="Categorie/read.php"><i class="bi bi-cart4"></i> Categories</a>
+                     <a class="nav-link text-white" href="../Categorie/read.php"><i class="bi bi-cart4"></i> Categories</a>
                </li> 
                <li class="nav-item">
-                     <a class="nav-link text-white" href="commande/commandeclient.php"><i class="bi bi-cart4"></i> Commande des clients</a>
+                     <a class="nav-link text-white" href="../commande/commandeclient.php"><i class="bi bi-cart4"></i> Commande des clients</a>
                </li>
                <?php endif; ?>
 
                <?php if (isAdmin()) : ?>
                <li class="nav-item">
-                  <a class="nav-link text-white" href="users/listboutiquier.php">
+                  <a class="nav-link text-white" href="../users/listboutiquier.php">
                      <i class="bi bi-heart"></i> gestion utilisateurs
                   </a>
                </li>
                <?php endif; ?>
                <li class="nav-item">
-                  <a class="btn btn-danger" href="page/connexion.php">
+                  <a class="btn btn-danger" href="../page/connexion.php">
                      <i class="bi bi-person-fill"></i> connexion
                   </a>
                </li>
@@ -88,11 +88,11 @@ require('roles.php');
                   <a class="nav-link text-white" href="#">All Categories</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link text-white" href="page/categorieByHomme.php"> Hommes</a>
+                  <a class="nav-link text-white" href="./categorieByHomme.php"> Hommes</a>
                </li>
 
                <li class="nav-item">
-                  <a class="nav-link text-white" href="page/categorieByFemme.php">Femmes</a>
+                  <a class="nav-link text-white" href="./categorieByFemme.php">Femmes</a>
                </li>
             </ul>
          </div>

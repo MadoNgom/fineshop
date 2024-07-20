@@ -23,7 +23,7 @@ $produits = $transaction->getAllProduct();
 
 <body>
     <?php
-    require('./page/header.php');
+    include('./page/header.php');
     ?>
     <!-- SHOW CASE SECTION -->
     <div class="container-fluid">
@@ -55,32 +55,32 @@ $produits = $transaction->getAllProduct();
     <section>
         <div class="container-fluid">
             <div class="row">
-            <?php foreach ($produits as $key => $produit) : ?>
-                <div class="col-md-4">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div>
-                            <img src="assets/image/<?= $produit['image'] ?>" height="150px" alt="">
-                            <h4 class="title">
-                            <?= $produit['nom'] ?>
-                            </h4>
-                            <div class="rating text-warning">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                            </div>
-                            <div class="d-flex my-3">
-                                <a href="#"><i class="bi bi-heart text-black fs-5"></i></a>
-                                <div class="mx-3">
-                                    <span class="text-warning"><?= $produit['prixU'] ?></span> <br>
+                <?php foreach ($produits as $key => $produit) : ?>
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div>
+                                <img src="assets/image/<?= $produit['image'] ?>" height="150px" alt="">
+                                <h4 class="title">
+                                    <?= $produit['nom'] ?>
+                                </h4>
+                                <div class="rating text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
                                 </div>
-                                <a href="#"><i class="bi bi-cart4 text-black fs-5"></i></a>
+                                <div class="d-flex my-3">
+                                    <a href="#"><i class="bi bi-heart text-black fs-5"></i></a>
+                                    <div class="mx-3">
+                                        <span class="text-warning"><?= $produit['prixU'] ?></span> <br>
+                                    </div>
+                                    <a href="#"><i class="bi bi-cart4 text-black fs-5"></i></a>
+                                </div>
+                                <a class="btn btn-danger" href="panier/ajoutPanier.php?idProduit=<?= $produit['id'] ?>">Ajouter au Panier</a>
                             </div>
-                            <a class="btn btn-danger" href="panier/ajoutPanier.php?idProduit=<?= $produit['id'] ?>">Ajouter au Panier</a>
                         </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
                 <!--<div class="col-md-4">
                     <div class="d-flex justify-content-center align-items-center">
@@ -375,7 +375,7 @@ $produits = $transaction->getAllProduct();
                         <h5 class="text-uppercase mb-4">A propos <img src="assets/image/logo.png" alt=""></a></h5>
 
                         <p>
-                        Bienvenue sur FineShop, votre destination ultime pour trouver les dernières tendances en matière de chaussures de qualité.<br> Chez FineShop, nous nous engageons à vous offrir une sélection soigneusement choisie de chaussures qui allient style, confort et qualité.
+                            Bienvenue sur FineShop, votre destination ultime pour trouver les dernières tendances en matière de chaussures de qualité.<br> Chez FineShop, nous nous engageons à vous offrir une sélection soigneusement choisie de chaussures qui allient style, confort et qualité.
 
 
                         </p>
@@ -454,7 +454,12 @@ $produits = $transaction->getAllProduct();
     <!-- End of .container -->
     <!-- Footer -->
     <!-- jS LINK -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
 </body>
 
 </html>
